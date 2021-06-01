@@ -12,6 +12,7 @@ class StoreContactForm extends FormRequest
      * @return bool
      */
     public function authorize()
+
     {
         return true;
     }
@@ -26,7 +27,7 @@ class StoreContactForm extends FormRequest
         return [
             'your_name' => 'required|string|max:20',
             'title' => 'required|string|max:50',
-            'email' => 'required|email|unique:users|max:255',
+            'email' => 'required|email|unique:bbs|max:255',
             'url' => 'url|nullable',
             'gender' => 'required',
             'age' => 'required',

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use App\Services\CheckFormData;
 use App\Services\CheckSearchData;
 use App\Http\Requests\StoreContactForm;
+use App\Models\UploadImage;
 class ContactFormController extends Controller
 {
 
@@ -17,7 +18,7 @@ class ContactFormController extends Controller
         $search = $request->input('search');
         // 検索フォーム
         $query = DB::table('bbs');
-        $contacts = CheckSearchData::checkSearch($query,$search);
+        $contacts = CheckSearchData::checkSearch($query, $search);
         return view('contact.index', compact('contacts'));
     }
 
@@ -25,7 +26,8 @@ class ContactFormController extends Controller
     {
         return view('contact.create');
     }
-                        //バリデーションチェックリクエスト
+
+    //バリデーションチェックリクエスト
     public function store(StoreContactForm $request)
     {
         $contact = new Bbs;
@@ -37,6 +39,7 @@ class ContactFormController extends Controller
         $contact->age = $request->input('age');
         $contact->contact = $request->input('contact');
         $contact->category_id = $request->input('category_id');
+        //$contact->category_id = $request->input('category_id');
         $contact->save();
         return redirect('contact/index');
 
@@ -49,7 +52,7 @@ class ContactFormController extends Controller
         $gender = CheckFormData::checkGender($contact);
         $age = CheckFormData::checkAge($contact);
         return view('contact.show',
-            compact('contact','gender','age'));
+            compact('contact', 'gender', 'age'));
     }
 
     public function edit($id)
@@ -80,4 +83,6 @@ class ContactFormController extends Controller
         $contact->delete();
         return redirect('contact/index');
     }
+
+
 }

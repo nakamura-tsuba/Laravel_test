@@ -14,6 +14,6 @@ class DatabaseSeeder extends Seeder
          $this->call(UsersTableSeeder::class);
          $this->call(CategorySeeder::class);
          $this->call(ContactFormSeeder::class);
-         $this->call(Bbs_CategorySeeder::class);
+
     }
 }

@@ -13,24 +13,30 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <div class="form-row">
-                            <div class="form-group col-md-2">
+                        <div class="row">
+                            <div class="col-sm-2">
                                 <form method="GET" action="{{ route('contact.create') }}">
                                 @csrf
                                     <button type="submit" class="btn btn-primary" >新規登録</button>
                                 </form>
                             </div>
-                                <div class="form-group col-md-4">
+                                <div class="col-sm-4">
                                 <form method="GET" action="{{ route('contact.index') }}" class="form-inline my-2 my-lg-0">
                                 @csrf
                                     <input class="form-control mr-sm-2" name="search" type="search" placeholder="氏名検索" aria-label="Search">
                                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">検索する</button>
                                 </form>
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="col-sm-2">
                                 <form method="GET" action="{{ route('contact.index') }}" class="form-inline my-2 my-lg-0">
                                     @csrf
                                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">クリア</button>
+                                </form>
+                                </div>
+                                <div class="col-sm-2">
+                                <form method="GET" action="{{route('profile')}}">
+                                    @csrf
+                                    <input class="btn btn-outline-primary" type="submit" value="画像表示">
                                 </form>
                                 </div>
                             </div>

@@ -26,7 +26,7 @@ class AddTitleToBbsTable extends Migration
     public function down()
     {
         Schema::table('bbs', function (Blueprint $table) {
-            $table->dropColumn('title');
+
         });
     }
 }

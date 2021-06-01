@@ -74,6 +74,7 @@
 
                                 <input type="checkbox" name="caution" value="1">注意事項に同意する
                                 <br>
+
                                 <input class="btn btn-outline-primary" type="submit" value="登録する">
                             </form>
                             <form method="GET" action="{{route('contact.index')}}">
