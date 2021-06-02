@@ -27,13 +27,13 @@
                             <form method="POST" action="{{route('contact.store')}}">
                                 @csrf
                                 氏名
-                                <input class="form-control" type="text" name="your_name">
+                                <input class="form-control" type="text" name="your_name"value="{{Auth::user()->name}}">
                                 <br>
                                 件名
                                 <input class="form-control" type="text" name="title">
                                 <br>
                                 メールアドレス
-                                <input class="form-control" type="email" name="email">
+                                <input class="form-control" type="email" name="email" value="{{Auth::user()->email}}">
                                 <br>
                                 <div class="mb-3">
                                 ホームページ

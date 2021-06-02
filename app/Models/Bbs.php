@@ -10,5 +10,4 @@ class bbs extends Model
         return $this->belongsTo('App\Models\Category');
 }
 
-
 }
