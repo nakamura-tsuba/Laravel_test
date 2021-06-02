@@ -43,9 +43,11 @@
                         </div>
                             <hr>
                             <h3>問い合わせ内容</h3>
-                            <div class="container">
+                            <div class="border text-center">
                                     <p class="mt-2">
+                                        <b>
                                          {{$contact->contact }}
+                                        </b>
                                     </p>
                             </div>
                             <div class="row justify-content-center">
