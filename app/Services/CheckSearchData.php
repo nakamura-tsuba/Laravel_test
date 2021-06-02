@@ -23,7 +23,7 @@ class CheckSearchData
         };
 
         $query->select('id', 'your_name', 'title','category_id');
-        $query->orderBy('id', 'asc');
+        $query->orderBy('id', 'desc');
         $contacts = $query->paginate(20);
 
         return $contacts;

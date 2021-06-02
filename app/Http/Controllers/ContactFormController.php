@@ -63,7 +63,18 @@ class ContactFormController extends Controller
 
     public function update(Request $request, $id)
     {
+        $validate_rule= [
+            'your_name' => 'required|string|max:20',
+            'title' => 'required|string|max:50',
+            'email' => 'required|email|max:255',
+            'url' => 'url|nullable',
+            'gender' => 'required',
+            'age' => 'required',
+            'category_id' => 'required',
+            'contact' => 'required|string|max:200',
+        ];
         $contact = Bbs::find($id);
+        $this->validate($request,$validate_rule);
         $contact->your_name = $request->input('your_name');
         $contact->title = $request->input('title');
         $contact->email = $request->input('email');

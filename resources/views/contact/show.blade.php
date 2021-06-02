@@ -34,7 +34,7 @@
                                         <td class="text-nowrap">{{ $age}}</td>
                                         <td class="text-nowrap">{{ $gender}}</td>
                                         <td class="text-nowrap">{{ $contact->email}}</td>
-                                        <td>{{ $contact->url}}</td>
+                                        <td><a href="{{ $contact->url}}">{{ $contact->url}}</a></td>
                                         <td class="text-nowrap">{{ $contact->category->name}}</td>
                                         <td >{{ $contact->created_at}}</td>
                                     </tr>
@@ -44,9 +44,9 @@
                             <hr>
                             <h3>問い合わせ内容</h3>
                             <div class="container">
-                                <p class="mt-2">
-                            {{$contact->contact }}
-                                </p>
+                                    <p class="mt-2">
+                                         {{$contact->contact }}
+                                    </p>
                             </div>
                             <div class="row justify-content-center">
                                 <div class="col-4 align-self-center">
