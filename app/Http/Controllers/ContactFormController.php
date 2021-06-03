@@ -56,20 +56,6 @@ class ContactFormController extends Controller
             $filename = $request->file('image')->store('public');
             $contact->image = str_replace('public/', "", $filename);
         }
-        /*
-                if($upload_image) {
-                    //アップロードされた画像を保存
-                    $path = $upload_image->store('image');
-                    // 画像の保存に成功したらDBに記録する
-                    if($path){
-                    }
-               if(request('image')){
-                   $filename=request()->file('image')->getClientOriginalName();
-                   $inputs['image']=request('image')->storeAs('public/images',$filename);
-               }
-                 $contact->create($inputs);
-                $contact->image = $request->input('image');
-        */
         $contact->save();
 
         return redirect('contact/index');

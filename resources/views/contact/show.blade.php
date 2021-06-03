@@ -34,7 +34,7 @@
                                         <td class="text-nowrap">{{ $age}}</td>
                                         <td class="text-nowrap">{{ $gender}}</td>
                                         <td class="text-nowrap">{{ $contact->email}}</td>
-                                        <td><a href="{{ $contact->url}}">{{ $contact->url}}</a></td>
+                                        <td><a href="{{ $contact->url}}" target="_blank">{{ $contact->url}}</a></td>
                                         <td class="text-nowrap">{{ $contact->category->name}}</td>
                                         <td >{{ $contact->created_at}}</td>
                                     </tr>
@@ -52,7 +52,7 @@
                             </div>
                             <h3>画像</h3>
                             <div class="border text-center">
-                                <img src="{{Storage::url($contact->image)}}" width="1000px"height="800px">
+                                <img src="{{Storage::url($contact->image)}}" width="1000px"height="600px">
                             </div>
 
                             <div class="row justify-content-center">
