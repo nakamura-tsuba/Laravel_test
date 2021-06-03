@@ -34,10 +34,6 @@
                                 </form>
                                 </div>
                                 <div class="col-sm-2">
-                                <form method="GET" action="{{route('profile')}}">
-                                    @csrf
-                                    <input class="btn btn-outline-primary" type="submit" value="画像表示">
-                                </form>
                                 </div>
                             </div>
                         </div>

@@ -50,10 +50,15 @@
                                         </b>
                                     </p>
                             </div>
+                            <h3>画像</h3>
+                            <div class="border text-center">
+                                <img src="{{Storage::url($contact->image)}}" width="1000px"height="600px">
+                            </div>
+
                             <div class="row justify-content-center">
                                 <div class="col-4 align-self-center">
                                     <form method="GET" action="{{route('contact.edit',['id'=> $contact->id])}}">
-                                    @csrf
+                                        @csrf
                                     <input class="btn btn-outline-primary" type="submit" value="変更する">
                                     </form>
                                 </div>

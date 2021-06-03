@@ -34,7 +34,6 @@ class StoreContactForm extends FormRequest
             'category_id' => 'required',
             'contact' => 'required|string|max:200',
             'caution' => 'required|accepted',
-
         ];
     }
 }

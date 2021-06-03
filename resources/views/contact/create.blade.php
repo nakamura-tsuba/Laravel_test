@@ -24,7 +24,7 @@
                             </div>
                         @endif
                         <div class="mb-3">
-                            <form method="POST" action="{{route('contact.store')}}">
+                            <form method="POST" action="{{route('contact.store')}}"enctype="multipart/form-data">
                                 @csrf
                                 氏名
                                 <input class="form-control" type="text" name="your_name"value="{{Auth::user()->name}}">
@@ -71,7 +71,8 @@
                                 お問い合わせ内容
                                 <textarea rows="7" class="form-control" name="contact"></textarea>
                                 <br>
-
+                                <input id="image" type="file" name="image">
+                                <br>
                                 <input type="checkbox" name="caution" value="1">注意事項に同意する
                                 <br>
 

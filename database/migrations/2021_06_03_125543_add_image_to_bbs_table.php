@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddCategoryidToBbsTable extends Migration
+class AddImageToBbsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,7 @@ class AddCategoryidToBbsTable extends Migration
     public function up()
     {
         Schema::table('bbs', function (Blueprint $table) {
-            $table->unsignedBigInteger('category_id');
-           // $table->foreign('category_id')->references('id')->on('categories');
+            $table->text('image')->nullable($value =true);
         });
     }
 
@@ -26,6 +25,8 @@ class AddCategoryidToBbsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bbs');
+        Schema::table('bbs', function (Blueprint $table) {
+            //
+        });
     }
 }
