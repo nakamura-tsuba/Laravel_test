@@ -31,7 +31,7 @@ class ContactFormController extends Controller
     public function store(Request $request)
     {
         $contact = new Bbs;
-        $validate_rule= [
+        $validate_rule = [
             'your_name' => 'required|string|max:20',
             'title' => 'required|string|max:50',
             'email' => 'required|email|max:255',
@@ -42,7 +42,7 @@ class ContactFormController extends Controller
             'contact' => 'required|string|max:200',
             'caution' => 'required|accepted',
         ];
-        $this->validate($request,$validate_rule);
+        $this->validate($request, $validate_rule);
         $contact->your_name = $request->input('your_name');
         $contact->title = $request->input('title');
         $contact->email = $request->input('email');
@@ -52,9 +52,10 @@ class ContactFormController extends Controller
         $contact->contact = $request->input('contact');
         $contact->category_id = $request->input('category_id');
 
-        $filename=$request->file('image')->store('public');
-        $contact->image=str_replace('public/',"",$filename);
-
+        if ($file = $request->file('image')) {
+        $filename = $request->file('image')->store('public');
+        $contact->image = str_replace('public/', "", $filename);
+    }
 /*
         if($upload_image) {
             //アップロードされた画像を保存
