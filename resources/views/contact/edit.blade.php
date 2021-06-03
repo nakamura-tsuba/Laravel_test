@@ -67,6 +67,9 @@
                                     お問い合わせ内容
                                     <textarea rows="7" class="form-control"name="contact">{{$contact->contact}}</textarea>
                                     <br>
+                                    <br>
+                                    <input id="image" type="file" name="image">
+                                    <br>
                                     <input class="btn btn-info" type="submit" value="更新する">
                                 </form>
                             </div>

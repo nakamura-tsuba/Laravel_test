@@ -53,24 +53,23 @@ class ContactFormController extends Controller
         $contact->category_id = $request->input('category_id');
 
         if ($file = $request->file('image')) {
-        $filename = $request->file('image')->store('public');
-        $contact->image = str_replace('public/', "", $filename);
-    }
-/*
-        if($upload_image) {
-            //アップロードされた画像を保存
-            $path = $upload_image->store('image');
-            // 画像の保存に成功したらDBに記録する
-            if($path){
-
-            }
-       if(request('image')){
-           $filename=request()->file('image')->getClientOriginalName();
-           $inputs['image']=request('image')->storeAs('public/images',$filename);
-       }
-         $contact->create($inputs);
-        $contact->image = $request->input('image');
-*/
+            $filename = $request->file('image')->store('public');
+            $contact->image = str_replace('public/', "", $filename);
+        }
+        /*
+                if($upload_image) {
+                    //アップロードされた画像を保存
+                    $path = $upload_image->store('image');
+                    // 画像の保存に成功したらDBに記録する
+                    if($path){
+                    }
+               if(request('image')){
+                   $filename=request()->file('image')->getClientOriginalName();
+                   $inputs['image']=request('image')->storeAs('public/images',$filename);
+               }
+                 $contact->create($inputs);
+                $contact->image = $request->input('image');
+        */
         $contact->save();
 
         return redirect('contact/index');
@@ -81,11 +80,11 @@ class ContactFormController extends Controller
     {
 
         $contact = Bbs::find($id);
-       $gender = CheckFormData::checkGender($contact);
+        $gender = CheckFormData::checkGender($contact);
         $age = CheckFormData::checkAge($contact);
 
         return view('contact.show',
-           compact('contact', 'gender', 'age'));
+            compact('contact', 'gender', 'age'));
     }
 
     public function edit($id)

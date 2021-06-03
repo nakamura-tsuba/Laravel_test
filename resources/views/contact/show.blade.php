@@ -52,7 +52,7 @@
                             </div>
                             <h3>画像</h3>
                             <div class="border text-center">
-                                <img src="{{Storage::url($contact->image)}}" width="1000px"height="600px">
+                                <img src="{{Storage::url($contact->image)}}" width="1000px"height="800px">
                             </div>
 
                             <div class="row justify-content-center">
