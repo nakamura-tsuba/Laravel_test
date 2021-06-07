@@ -15,7 +15,6 @@ class AddCategoryidToBbsTable extends Migration
     {
         Schema::table('bbs', function (Blueprint $table) {
             $table->unsignedBigInteger('category_id');
-           // $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

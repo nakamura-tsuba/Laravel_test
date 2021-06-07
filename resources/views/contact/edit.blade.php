@@ -27,18 +27,17 @@
                                     @csrf
                                     氏名
                                     <input class="form-control" type="text" name="your_name" value="{{ $contact->your_name }}">
-
                                     件名
                                     <input class="form-control"type="text" name="title" value="{{ $contact->title }}">
                                     <br>
                                     メールアドレス
                                     <input class="form-control"type="email" name="email" value="{{ $contact->email }}">
                                     <br>
-                                <div class="mb-3">
+                                    <div class="mb-3">
                                     ホームページ
                                     <input class="form-control"type="url" name="url" value="{{ $contact->url }}">
-                                </div>
-                                <div class="mb-1">
+                                    </div>
+                                    <div class="mb-1">
                                     カテゴリ
                                     <select name="category_id">
                                         <option value="1"@if($contact->category_id === 1 ) selected @endif>相談</option>>相談</option>
@@ -66,7 +65,6 @@
                                     <br>
                                     お問い合わせ内容
                                     <textarea rows="7" class="form-control"name="contact">{{$contact->contact}}</textarea>
-                                    <br>
                                     <br>
                                     <input id="image" type="file" name="image">
                                     <br>

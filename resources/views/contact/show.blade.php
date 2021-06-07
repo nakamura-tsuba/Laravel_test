@@ -6,8 +6,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">詳細画面</div>
-
-                    <div class="card-body">
+                      <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
@@ -16,16 +15,16 @@
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
-                                <tr>
-                                    <th scope="col" class="text-nowrap">ID</th>
-                                    <th scope="col" class="text-nowrap">氏名</th>
-                                    <th scope="col" class="text-nowrap">年齢</th>
-                                    <th scope="col" class="text-nowrap">性別</th>
-                                    <th scope="col" class="text-nowrap">メールアドレス</th>
-                                    <th scope="col" class="text-nowrap">URL</th>
-                                    <th scope="col" class="text-nowrap">カテゴリ</th>
-                                    <th scope="col" class="text-nowrap">登録日時</th>
-                                </tr>
+                                    <tr>
+                                        <th scope="col" class="text-nowrap">ID</th>
+                                        <th scope="col" class="text-nowrap">氏名</th>
+                                        <th scope="col" class="text-nowrap">年齢</th>
+                                        <th scope="col" class="text-nowrap">性別</th>
+                                        <th scope="col" class="text-nowrap">メールアドレス</th>
+                                        <th scope="col" class="text-nowrap">URL</th>
+                                        <th scope="col" class="text-nowrap">カテゴリ</th>
+                                        <th scope="col" class="text-nowrap">登録日時</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
@@ -52,14 +51,14 @@
                             </div>
                             <h3>画像</h3>
                             <div class="border text-center">
-                                <img src="{{Storage::url($contact->image)}}" width="1000px"height="600px">
+                                <img src="{{Storage::url($contact->image)}}" width="100%"height="100%">
                             </div>
 
                             <div class="row justify-content-center">
                                 <div class="col-4 align-self-center">
                                     <form method="GET" action="{{route('contact.edit',['id'=> $contact->id])}}">
                                         @csrf
-                                    <input class="btn btn-outline-primary" type="submit" value="変更する">
+                                        <input class="btn btn-outline-primary" type="submit" value="変更する">
                                     </form>
                                 </div>
                             <div class="col-4">

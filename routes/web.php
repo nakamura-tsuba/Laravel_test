@@ -31,8 +31,3 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::group(['middleware' => 'auth'],function() {
-    Route::get('/profile', 'ProfileController@index')->name('profile');
-    Route::post('/profile', 'ProfileController@store');
-    Route::POST('/upload', 'ProfileController@upload')->name('upload');
-});
